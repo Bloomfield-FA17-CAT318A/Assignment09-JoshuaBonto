@@ -23,17 +23,12 @@ public class coinScript : MonoBehaviour {
 
 	}
 	void OnTriggerEnter(Collider other){
-		Debug.Log ("enter");
-		if (other.transform.tag == "zone") {
-			Debug.Log ("zone");
-			other.GetComponent<zoneScript> ().coin (this.gameObject);
-		}
-		if(other.GetComponent<player>().getcarry()==false){
+//		
+		if(other.GetComponent<player>()){
 			if (guardian) {
 				guardian.wakeUp ();
 			}
-			other.GetComponent<player> ().setCarry (true);
-			Destroy (this.gameObject);
+
 		}
 
 	}

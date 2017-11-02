@@ -58,6 +58,7 @@ public class enemy : MonoBehaviour {
 	}
 	void OnCollisionStay(Collision other){
 		if (other.transform.tag == "Player") {
+			Debug.Log ("ow");
 			SceneManager.LoadScene ("gameroom");
 		}
 	}

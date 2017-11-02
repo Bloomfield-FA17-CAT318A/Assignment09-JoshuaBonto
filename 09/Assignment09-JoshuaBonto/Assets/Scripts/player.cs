@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class player : MonoBehaviour {
 	[Header("Stats")]
 	public float ms;
@@ -56,6 +56,12 @@ public class player : MonoBehaviour {
 		count++;
 		if (count == max) {
 
+		}
+	}
+	void OnCollisionEnter(Collision col){
+		if (col.transform.tag == "col") {
+			Debug.Log ("player reset");
+			SceneManager.LoadScene ("gameroom");
 		}
 	}
 }
